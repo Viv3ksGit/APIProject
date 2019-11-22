@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  APIProject
-//
-//  Created by Vivek Mohanan on 2019-11-21.
-//  Copyright © 2019 com.vivekmohanan. All rights reserved.
-//
 
 import UIKit
 
@@ -43,4 +36,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
