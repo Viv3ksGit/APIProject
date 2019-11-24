@@ -15,8 +15,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -32,16 +30,9 @@ class HomeViewController: UIViewController {
     
     
     
-    
     @IBAction func HometoNews(_ sender: Any) {
          performSegue(withIdentifier: "HometoNews", sender: nil)
     }
-    
-    
-    
-    
-    
-    
     
 
     @IBAction func openMenu(_ sender: Any) {

@@ -1,14 +1,14 @@
 //
-//  Signup.swift
+//  LoginViewController.swift
 //  APIProject
 //
-//  Created by Vivek Mohanan on 2019-11-22.
+//  Created by Jeffrey Neil Dsouza on 2019-11-22.
 //  Copyright © 2019 com.vivekmohanan. All rights reserved.
 //
 
 import UIKit
 
-class Signup: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
