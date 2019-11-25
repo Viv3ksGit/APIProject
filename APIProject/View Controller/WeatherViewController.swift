@@ -15,7 +15,9 @@ class WeatherViewController: UIViewController {
     var city = ""
     var condition = ""
     var weatherArray = [String]()
-    var listArray = [String]()
+    var cityArray = [String]()
+    var temperatureArray = [String]()
+    var conditionArray = [String]()
     
    /* @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -100,6 +102,10 @@ func weatherAdd(){
                 self.condition = weather.conditionName
                 self.city = weather.cityName
                 self.weatherArray = [self.city, self.temperature, self.condition]
+                self.cityArray.insert(self.city, at: 0)
+                self.temperatureArray.insert(self.temperature, at: 0)
+                self.conditionArray.insert(self.condition, at: 0)
+                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
                 self.tableView.reloadData()
             }
             
@@ -136,28 +142,59 @@ func weatherAdd(){
 // MARK: - UITableViewDelegate and UITableViewDataSource
 extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        self.yourArray.insert(msg, at: 0)
-        self.tableView.beginUpdates()
-        self.tableView.insertRows(at: [IndexPath.init(row: 0, section: 0)], with: .automatic)
-        self.tableView.endUpdates()
- */
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
-        cell.configureCell(weather: [self.city, self.temperature, self.condition])
-        
-        return cell
-        
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
-        
-        cell.configureCell(forecastData: forecastArray[indexPath.row])
-        return cell*/
-    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-        //return forecastArray.count
+        return cityArray.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let WeatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell")
+        
+        if let lblCity = WeatherCell?.contentView.viewWithTag(101) as? UILabel {
+            lblCity.text = cityArray[indexPath.row]
+        }
+        
+        if let lbltemperature = WeatherCell?.contentView.viewWithTag(102) as? UILabel {
+            lbltemperature.text = temperatureArray[indexPath.row]
+        }
+        
+        if let imageCondition = WeatherCell?.contentView.viewWithTag(103) as? UIImageView {
+          
+            if #available(iOS 13.0, *) {
+                imageCondition.image = UIImage(systemName: conditionArray[indexPath.row])
+                
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        if let btnDelete = WeatherCell?.contentView.viewWithTag(104) as? UIButton {
+            btnDelete.addTarget(self, action: #selector(deleteRow(_ :)), for: .touchUpInside)
+        }
+        
+        return WeatherCell!
+    }
+    
+ 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+
+    @objc func deleteRow(_ sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: point) else {
+            return
+        }
+        cityArray.remove(at: indexPath.row)
+        temperatureArray.remove(at: indexPath.row)
+        conditionArray.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
 }
