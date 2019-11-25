@@ -11,12 +11,20 @@ import CoreLocation
 
 class WeatherViewController: UIViewController {
     
-    @IBOutlet weak var conditionImageView: UIImageView!
+    var temperature = ""
+    var city = ""
+    var condition = ""
+    var weatherArray = [String]()
+    var listArray = [String]()
+    
+   /* @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+ */
     @IBOutlet weak var searchTextField: UITextField!
     
-  
+    @IBOutlet weak var tableView: UITableView!
+    
     var weatherManager = WeatherManager()
         let locationManager = CLLocationManager()
 
@@ -29,9 +37,17 @@ class WeatherViewController: UIViewController {
             
             weatherManager.delegate = self
             searchTextField.delegate = self
+            
+            //table view
+            tableView.delegate = self
+            tableView.dataSource = self
         }
 
     }
+
+func weatherAdd(){
+    
+}
 
     //MARK: - UITextFieldDelegate
 
@@ -73,15 +89,20 @@ class WeatherViewController: UIViewController {
         
         func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
             DispatchQueue.main.async {
-                self.temperatureLabel.text = weather.temperatureString
+                self.temperature = weather.temperatureString
+                /*
                 if #available(iOS 13.0, *) {
                     self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+                    
                 } else {
                     // Fallback on earlier versions
-                }
-                
-                self.cityLabel.text = weather.cityName
+                }*/
+                self.condition = weather.conditionName
+                self.city = weather.cityName
+                self.weatherArray = [self.city, self.temperature, self.condition]
+                self.tableView.reloadData()
             }
+            
         }
         
         func didFailWithError(error: Error) {
@@ -112,3 +133,31 @@ class WeatherViewController: UIViewController {
         }
     }
 
+// MARK: - UITableViewDelegate and UITableViewDataSource
+extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /*
+        self.yourArray.insert(msg, at: 0)
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: [IndexPath.init(row: 0, section: 0)], with: .automatic)
+        self.tableView.endUpdates()
+ */
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
+        cell.configureCell(weather: [self.city, self.temperature, self.condition])
+        
+        return cell
+        
+        /*let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
+        
+        cell.configureCell(forecastData: forecastArray[indexPath.row])
+        return cell*/
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+        //return forecastArray.count
+    }
+}
