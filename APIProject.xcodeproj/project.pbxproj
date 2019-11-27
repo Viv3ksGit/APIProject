@@ -23,6 +23,7 @@
 		6EDF07D32387554800EBB686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF07D12387554800EBB686 /* Main.storyboard */; };
 		6EDF07D52387554900EBB686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF07D42387554900EBB686 /* Assets.xcassets */; };
 		6EDF07D82387554900EBB686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF07D62387554900EBB686 /* LaunchScreen.storyboard */; };
+		7752C184238EACE20091AC50 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752C183238EACE10091AC50 /* SettingsViewController.swift */; };
 		79CD0E28E7FAECFE6EF5FBD6 /* Pods_APIProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F2D4DFABA49DF851268FCC /* Pods_APIProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		6EDF07D42387554900EBB686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EDF07D72387554900EBB686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EDF07D92387554900EBB686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7752C183238EACE10091AC50 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				172B2F0E238DA6D600AB2408 /* GoogleService-Info.plist */,
 				17B735142388F3D80047ABE6 /* SignUpViewController.swift */,
 				173822302389FF5700A89806 /* WeatherViewController.swift */,
+				7752C183238EACE10091AC50 /* SettingsViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				173822312389FF5700A89806 /* WeatherViewController.swift in Sources */,
 				5D01080B238DC530003DF0AD /* Article.swift in Sources */,
 				175E7C8023877415004A89FC /* ProfileViewController.swift in Sources */,
+				7752C184238EACE20091AC50 /* SettingsViewController.swift in Sources */,
 				17382236238A014E00A89806 /* WeatherData.swift in Sources */,
 				175E7C7E2387637A004A89FC /* HomeViewController.swift in Sources */,
 			);

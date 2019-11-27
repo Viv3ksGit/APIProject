@@ -17,6 +17,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func settingsButton(_ sender: Any) {
+        performSegue(withIdentifier: "HometoSettings", sender: nil)
+    }
     
     
     @IBAction func profilebutton(_ sender: Any) {
