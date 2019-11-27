@@ -158,6 +158,10 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -271,15 +275,21 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - ObjectMapper (3.5.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlamofireObjectMapper (~> 5.2)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - ObjectMapper (~> 3.4)
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
+    - AlamofireObjectMapper
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -299,9 +309,12 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - ObjectMapper
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
@@ -321,7 +334,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
 
-PODFILE CHECKSUM: 06303616b8692ed7953eadb8b0c623ad2f3c045b
+PODFILE CHECKSUM: ef753177e2500aca83cac381bc94efa827f21c3e
 
 COCOAPODS: 1.8.4
