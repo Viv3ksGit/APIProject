@@ -14,8 +14,7 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var newsTextView: UITextView!
-    
+    @IBOutlet weak var newsTableView: UITableView!
     var query = "", url = ""
     var arrayNews = [Article]()
     var date: String = ""
@@ -23,16 +22,13 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let val = NSMutableAttributedString(string: "Hello")
-        self.newsTextView.attributedText  = val
- */
         searchBar.delegate = self
         getNews()
+        newsTableView.delegate = self
+        newsTableView.dataSource = self
     }
     
-    func getNews()
-    {
+    func getNews() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         date = formatter.string(from: Date())
@@ -49,23 +45,13 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
         })
     }
     
-    func searchBarSearchButtonClicked( _ searchBar: UISearchBar)
-    {
+    func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
         query = "qInTitle="+(searchBar.text!.trimmingCharacters(in: .whitespaces).components(separatedBy: [" "]).joined(separator: "%20OR%20"))
         getNews()
     }
     
-    func updateNews(){
-        self.newsTextView.attributedText = NSAttributedString(string: "")
-        for article in self.arrayNews {
-            let title = article.title ?? ""
-            let author = article.author != nil ? " by " + article.author! + "\n\n" : ""
-            
-            let attributedText = NSMutableAttributedString(attributedString: self.newsTextView.attributedText)
-            attributedText.append(NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.black]))
-            attributedText.append(NSAttributedString(string: author, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black]))
-            self.newsTextView.attributedText = attributedText
-        }
+    func updateNews() {
+        self.newsTableView.reloadData()
     }
     
     func loadNews(_ url: String, completionHandler: @escaping CompletionHandler) {
@@ -76,5 +62,56 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
             }
             else {print(url, response.result.error.debugDescription)}
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        print("opening \(URL)")
+        UIApplication.shared.open(URL)
+        return false
+    }
+}
+
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayNews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let newsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell")
+        if !arrayNews.isEmpty {
+        if let labelTitle = newsCell?.contentView.viewWithTag(110) as? UILabel {
+            labelTitle.text = arrayNews[indexPath.row].title
+            labelTitle.numberOfLines = 0
+            labelTitle.sizeToFit()
+        }
+        if let labelAuthor = newsCell?.contentView.viewWithTag(111) as? UILabel {
+                   labelAuthor.text = arrayNews[indexPath.row].author
+               }
+        }
+        return newsCell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let strAttributesMs = [NSAttributedString.Key.font:UIFont.systemFont(ofSize:16.0)]
+        let alrtMessage = NSMutableAttributedString(string: arrayNews[indexPath.row].description!, attributes: strAttributesMs)
+        let alert = UIAlertController(title: arrayNews[indexPath.row].title, message: "", preferredStyle: .alert)
+        alert.setValue(alrtMessage, forKey: "attributedMessage")
+
+        let goAction = UIAlertAction(title: "Read more", style: .default) {
+             UIAlertAction in
+            UIApplication.shared.open(URL(string: self.arrayNews[indexPath.row].url!)!)
+         }
+        alert.addAction(goAction)
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
