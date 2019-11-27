@@ -23,7 +23,10 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /*
+        let val = NSMutableAttributedString(string: "Hello")
+        self.newsTextView.attributedText  = val
+ */
         searchBar.delegate = self
         getNews()
     }
@@ -59,8 +62,8 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
             let author = article.author != nil ? " by " + article.author! + "\n\n" : ""
             
             let attributedText = NSMutableAttributedString(attributedString: self.newsTextView.attributedText)
-            attributedText.append(NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white]))
-            attributedText.append(NSAttributedString(string: author, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.lightText]))
+            attributedText.append(NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.black]))
+            attributedText.append(NSAttributedString(string: author, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black]))
             self.newsTextView.attributedText = attributedText
         }
     }
