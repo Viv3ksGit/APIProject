@@ -24,11 +24,12 @@ struct WeatherManager {
         let urlString = "\(weatherURL)&q=\(cityName)"
         performRequest(with: urlString)
     }
-    
+    //
     func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
         performRequest(with: urlString)
     }
+    
     
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
@@ -47,7 +48,7 @@ struct WeatherManager {
             task.resume()
         }
     }
-    
+    //parse jason to decode into variables in weather model
     func parseJSON(_ weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {

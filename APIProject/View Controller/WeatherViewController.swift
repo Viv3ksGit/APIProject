@@ -52,7 +52,7 @@ func weatherAdd(){
 }
 
     //MARK: - UITextFieldDelegate
-
+// passes the text from the text search field to weather manager
     extension WeatherViewController: UITextFieldDelegate {
         
         @IBAction func searchPressed(_ sender: UIButton) {
@@ -86,7 +86,7 @@ func weatherAdd(){
 
     //MARK: - WeatherManagerDelegate
 
-
+    //recieves weather conditions from weather model
     extension WeatherViewController: WeatherManagerDelegate {
         
         func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
@@ -140,6 +140,7 @@ func weatherAdd(){
     }
 
 // MARK: - UITableViewDelegate and UITableViewDataSource
+
 extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     
     

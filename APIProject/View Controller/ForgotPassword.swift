@@ -11,6 +11,7 @@ import Firebase
 
 class ForgotPassword: UIViewController {
 
+    @IBOutlet weak var reset: UIButton!
     @IBOutlet weak var email: UITextField!
     
     @IBAction func resetPass(_ sender: Any) {
@@ -21,10 +22,16 @@ class ForgotPassword: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-
+        reset.layer.cornerRadius = 15.0
+               reset.layer.masksToBounds = true
+        
+        
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func close(_ sender: UIButton) {
+         dismiss(animated: true, completion:nil)
+    }
     func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil){
                Auth.auth().sendPasswordReset(withEmail: email) { error in
                 callback?(error)
