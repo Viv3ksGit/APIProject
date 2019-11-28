@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CKs-9P-c0V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YzB-0M-cj1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -56,6 +56,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydS-sl-1Fi">
                                         <rect key="frame" x="27" y="598" width="205" height="22"/>
                                         <state key="normal" title="Button" image="arrowtriangle.down.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="logout:" destination="ZbB-gs-F9B" eventType="touchUpInside" id="5nZ-Yh-jXb"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profilepic" translatesAutoresizingMaskIntoConstraints="NO" id="ugi-eR-CcA">
                                         <rect key="frame" x="-240" y="0.0" width="240" height="199"/>
@@ -717,21 +720,33 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yB-kG-6jP">
                                 <rect key="frame" x="104" y="159" width="206" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="sms-9O-M8G"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NjW-bk-s2r">
                                 <rect key="frame" x="104" y="231" width="206" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="oEW-ot-kw5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E3y-7m-qNG">
                                 <rect key="frame" x="104" y="363" width="206" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Aa1-1Y-JYr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCx-rB-JZc">
                                 <rect key="frame" x="104" y="297" width="206" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="TDg-hK-gmv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -752,7 +767,7 @@
                                 <rect key="frame" x="104" y="438" width="206" height="43"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="jKR-cF-wu9"/>
+                                    <constraint firstAttribute="height" constant="43" id="Ma1-2R-vRZ"/>
                                 </constraints>
                                 <state key="normal" title="Create an account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -761,29 +776,54 @@
                                     <action selector="createBtn:" destination="Neo-j0-DJ4" eventType="touchUpInside" id="LcY-Cp-pNb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIU-6m-sfe">
+                                <rect key="frame" x="113" y="515" width="224" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="I accept the terms and privacy policy"/>
+                                <connections>
+                                    <segue destination="hkv-eM-YHY" kind="show" id="dCM-zX-V6l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-94-UxG">
+                                <rect key="frame" x="88" y="521" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="KbV-6b-KRr"/>
+                                </constraints>
+                                <state key="normal" image="UnCheckbox"/>
+                                <state key="selected" image="Checkbox"/>
+                                <connections>
+                                    <action selector="checkBoxTapped:" destination="Neo-j0-DJ4" eventType="touchUpInside" id="9k1-ew-F7w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Igk-8R-fsw" firstAttribute="top" secondItem="E3y-7m-qNG" secondAttribute="bottom" constant="41" id="24R-Ea-TCr"/>
-                            <constraint firstItem="35d-be-gwi" firstAttribute="top" secondItem="xjp-AB-YJm" secondAttribute="bottom" constant="8" id="E5r-bE-lQ7"/>
-                            <constraint firstItem="gUQ-TZ-HHc" firstAttribute="bottom" secondItem="35d-be-gwi" secondAttribute="bottom" constant="91" id="F74-ey-Ndk"/>
-                            <constraint firstItem="lCx-rB-JZc" firstAttribute="leading" secondItem="E3y-7m-qNG" secondAttribute="leading" id="OtT-jg-5IV"/>
-                            <constraint firstItem="E3y-7m-qNG" firstAttribute="top" secondItem="lCx-rB-JZc" secondAttribute="bottom" constant="32" id="Rbd-iv-JlC"/>
-                            <constraint firstItem="lCx-rB-JZc" firstAttribute="centerX" secondItem="8yB-kG-6jP" secondAttribute="centerX" id="UvT-91-OKa"/>
-                            <constraint firstItem="NjW-bk-s2r" firstAttribute="top" secondItem="8yB-kG-6jP" secondAttribute="bottom" constant="38" id="Xit-Zz-4wE"/>
-                            <constraint firstItem="lCx-rB-JZc" firstAttribute="top" secondItem="NjW-bk-s2r" secondAttribute="bottom" constant="32" id="Yme-QR-4JI"/>
-                            <constraint firstItem="Igk-8R-fsw" firstAttribute="trailing" secondItem="xjp-AB-YJm" secondAttribute="trailing" id="gUR-9v-KDW"/>
-                            <constraint firstItem="NjW-bk-s2r" firstAttribute="centerX" secondItem="8yB-kG-6jP" secondAttribute="centerX" id="kWC-0r-5pB"/>
-                            <constraint firstItem="E3y-7m-qNG" firstAttribute="centerX" secondItem="8yB-kG-6jP" secondAttribute="centerX" id="ktX-kD-XER"/>
-                            <constraint firstItem="35d-be-gwi" firstAttribute="centerX" secondItem="8yB-kG-6jP" secondAttribute="centerX" id="lcD-Rn-KgK"/>
-                            <constraint firstItem="8yB-kG-6jP" firstAttribute="leading" secondItem="NjW-bk-s2r" secondAttribute="leading" id="mBY-zf-dl8"/>
-                            <constraint firstItem="E3y-7m-qNG" firstAttribute="leading" secondItem="Igk-8R-fsw" secondAttribute="leading" id="nQA-R8-2uE"/>
-                            <constraint firstItem="8yB-kG-6jP" firstAttribute="top" secondItem="gUQ-TZ-HHc" secondAttribute="top" constant="115" id="qYq-vk-cMW"/>
-                            <constraint firstItem="Igk-8R-fsw" firstAttribute="centerX" secondItem="8yB-kG-6jP" secondAttribute="centerX" id="sUe-sX-t4G"/>
-                            <constraint firstItem="xjp-AB-YJm" firstAttribute="leading" secondItem="gUQ-TZ-HHc" secondAttribute="leading" constant="104" id="stv-2h-XJm"/>
-                            <constraint firstItem="NjW-bk-s2r" firstAttribute="leading" secondItem="lCx-rB-JZc" secondAttribute="leading" id="vzW-jM-2dt"/>
-                            <constraint firstItem="xjp-AB-YJm" firstAttribute="centerX" secondItem="poL-4v-xi4" secondAttribute="centerX" id="wE1-od-dI3"/>
-                            <constraint firstItem="xjp-AB-YJm" firstAttribute="centerX" secondItem="8yB-kG-6jP" secondAttribute="centerX" id="x1S-yH-l8W"/>
+                            <constraint firstItem="lCx-rB-JZc" firstAttribute="top" secondItem="NjW-bk-s2r" secondAttribute="bottom" constant="32" id="Hrh-C0-PGU"/>
+                            <constraint firstItem="uIU-6m-sfe" firstAttribute="leading" secondItem="RTZ-94-UxG" secondAttribute="trailing" constant="8" id="M46-Ko-TDQ"/>
+                            <constraint firstItem="8yB-kG-6jP" firstAttribute="leading" secondItem="NjW-bk-s2r" secondAttribute="leading" id="PCb-aR-zGG"/>
+                            <constraint firstItem="RTZ-94-UxG" firstAttribute="top" secondItem="gUQ-TZ-HHc" secondAttribute="top" constant="477" id="QnM-Lg-WfE"/>
+                            <constraint firstItem="8yB-kG-6jP" firstAttribute="centerX" secondItem="poL-4v-xi4" secondAttribute="centerX" id="Qx6-eg-7Ay"/>
+                            <constraint firstItem="lCx-rB-JZc" firstAttribute="trailing" secondItem="E3y-7m-qNG" secondAttribute="trailing" id="RHs-j7-5jk"/>
+                            <constraint firstItem="Igk-8R-fsw" firstAttribute="top" secondItem="E3y-7m-qNG" secondAttribute="bottom" constant="41" id="SE3-i8-3P6"/>
+                            <constraint firstItem="8yB-kG-6jP" firstAttribute="leading" secondItem="gUQ-TZ-HHc" secondAttribute="leading" constant="104" id="bC2-Kn-m3r"/>
+                            <constraint firstItem="gUQ-TZ-HHc" firstAttribute="bottom" secondItem="35d-be-gwi" secondAttribute="bottom" constant="91" id="cUt-XT-Zex"/>
+                            <constraint firstItem="lCx-rB-JZc" firstAttribute="leading" secondItem="E3y-7m-qNG" secondAttribute="leading" id="dSt-RC-MOQ"/>
+                            <constraint firstItem="35d-be-gwi" firstAttribute="top" secondItem="xjp-AB-YJm" secondAttribute="bottom" constant="8" id="foW-Q3-hlS"/>
+                            <constraint firstItem="Igk-8R-fsw" firstAttribute="leading" secondItem="xjp-AB-YJm" secondAttribute="leading" id="gcl-GY-3AY"/>
+                            <constraint firstItem="E3y-7m-qNG" firstAttribute="leading" secondItem="Igk-8R-fsw" secondAttribute="leading" id="iJE-8C-u6e"/>
+                            <constraint firstItem="NjW-bk-s2r" firstAttribute="trailing" secondItem="lCx-rB-JZc" secondAttribute="trailing" id="iWf-i4-2Nb"/>
+                            <constraint firstItem="RTZ-94-UxG" firstAttribute="centerY" secondItem="uIU-6m-sfe" secondAttribute="centerY" id="iqA-sN-Yua"/>
+                            <constraint firstItem="uIU-6m-sfe" firstAttribute="top" secondItem="Igk-8R-fsw" secondAttribute="bottom" constant="34" id="jaG-ss-f3V"/>
+                            <constraint firstItem="E3y-7m-qNG" firstAttribute="trailing" secondItem="Igk-8R-fsw" secondAttribute="trailing" id="kPT-ZU-8Gg"/>
+                            <constraint firstItem="RTZ-94-UxG" firstAttribute="leading" secondItem="gUQ-TZ-HHc" secondAttribute="leading" constant="88" id="l3T-Sv-JS0"/>
+                            <constraint firstItem="8yB-kG-6jP" firstAttribute="top" secondItem="gUQ-TZ-HHc" secondAttribute="top" constant="115" id="ljj-Lc-rk7"/>
+                            <constraint firstItem="E3y-7m-qNG" firstAttribute="top" secondItem="lCx-rB-JZc" secondAttribute="bottom" constant="32" id="pJq-u2-SmO"/>
+                            <constraint firstItem="8yB-kG-6jP" firstAttribute="trailing" secondItem="NjW-bk-s2r" secondAttribute="trailing" id="qnZ-Mb-fZh"/>
+                            <constraint firstItem="Igk-8R-fsw" firstAttribute="trailing" secondItem="xjp-AB-YJm" secondAttribute="trailing" id="rtw-02-sDR"/>
+                            <constraint firstItem="NjW-bk-s2r" firstAttribute="leading" secondItem="lCx-rB-JZc" secondAttribute="leading" id="s3H-Fj-nwI"/>
+                            <constraint firstItem="xjp-AB-YJm" firstAttribute="centerX" secondItem="35d-be-gwi" secondAttribute="centerX" id="tfy-Zl-aTh"/>
+                            <constraint firstItem="gUQ-TZ-HHc" firstAttribute="bottom" secondItem="RTZ-94-UxG" secondAttribute="bottom" constant="324" id="wbC-y4-Jgo"/>
+                            <constraint firstItem="NjW-bk-s2r" firstAttribute="top" secondItem="8yB-kG-6jP" secondAttribute="bottom" constant="38" id="zdm-qH-MIx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gUQ-TZ-HHc"/>
                     </view>
@@ -799,7 +839,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGK-wd-bq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138" y="121"/>
+            <point key="canvasLocation" x="-139.13043478260872" y="120.53571428571428"/>
+        </scene>
+        <!--Privacy-->
+        <scene sceneID="c8i-LE-P0f">
+            <objects>
+                <viewController id="hkv-eM-YHY" customClass="Privacy" customModule="APIProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p6U-T3-D9W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4G8-Ug-4pJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zys-g9-nT9">
+                                        <rect key="frame" x="0.0" y="0.0" width="406" height="743"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="743" id="9ui-Hv-Pdz"/>
+                                        </constraints>
+                                        <mutableString key="text">&lt;h1&gt;Privacy Policy for Weather App&lt;/h1&gt;
+
+&lt;p&gt;At Weatherapp, accessible from Weatherapp.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Weatherapp and how we use it.&lt;/p&gt;
+
+&lt;p&gt;If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.&lt;/p&gt;
+
+&lt;h2&gt;Log Files&lt;/h2&gt;
+
+&lt;p&gt;Weatherapp follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.&lt;/p&gt;
+
+&lt;h2&gt;Cookies and Web Beacons&lt;/h2&gt;
+
+&lt;p&gt;Like any other website, Weatherapp uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.&lt;/p&gt;
+
+
+&lt;h2&gt;Our Advertising Partners&lt;/h2&gt;
+
+&lt;p&gt;Some of advertisers on our site may use cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Google&lt;/p&gt;
+        &lt;p&gt;&lt;a href="https://policies.google.com/technologies/ads"&gt;https://policies.google.com/technologies/ads&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Privacy Policies&lt;/h2&gt;
+
+&lt;P&gt;You may consult this list to find the Privacy Policy for each of the advertising partners of Weatherapp. Our Privacy Policy was created with the help of the &lt;a href="https://www.privacypolicygenerator.info"&gt;Privacy Policy Generator&lt;/a&gt; and the &lt;a href="https://www.privacypolicyonline.com"&gt;Privacy Policy Generator Online&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Weatherapp, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.&lt;/p&gt;
+
+&lt;p&gt;Note that Weatherapp has no access to or control over these cookies that are used by third-party advertisers.&lt;/p&gt;
+
+&lt;h2&gt;Third Party Privacy Policies&lt;/h2&gt;
+
+&lt;p&gt;Weatherapp's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You may find a complete list of these Privacy Policies and their links here: Privacy Policy Links.&lt;/p&gt;
+
+&lt;p&gt;You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?&lt;/p&gt;
+
+&lt;h2&gt;Children's Information&lt;/h2&gt;
+
+&lt;p&gt;Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.&lt;/p&gt;
+
+&lt;p&gt;Weatherapp does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.&lt;/p&gt;
+
+&lt;h2&gt;Online Privacy Policy Only&lt;/h2&gt;
+
+&lt;p&gt;This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Weatherapp. This policy is not applicable to any information collected offline or via channels other than this website.&lt;/p&gt;
+
+&lt;h2&gt;Consent&lt;/h2&gt;
+
+&lt;p&gt;By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.&lt;/p&gt;</mutableString>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zys-g9-nT9" firstAttribute="trailing" secondItem="4G8-Ug-4pJ" secondAttribute="trailingMargin" id="BpY-a4-WrM"/>
+                                    <constraint firstAttribute="bottom" secondItem="zys-g9-nT9" secondAttribute="bottom" id="Iwn-1z-Uog"/>
+                                    <constraint firstItem="A2q-Ei-X4t" firstAttribute="trailing" secondItem="zys-g9-nT9" secondAttribute="trailing" constant="8" id="VKD-G1-kuT"/>
+                                    <constraint firstItem="zys-g9-nT9" firstAttribute="top" secondItem="iP7-Hf-xax" secondAttribute="top" id="czk-jT-lP2"/>
+                                    <constraint firstItem="zys-g9-nT9" firstAttribute="leading" secondItem="A2q-Ei-X4t" secondAttribute="leading" id="tP7-h0-3NG"/>
+                                    <constraint firstItem="zys-g9-nT9" firstAttribute="bottom" secondItem="A2q-Ei-X4t" secondAttribute="bottom" id="y2i-2Z-kap"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="iP7-Hf-xax"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="A2q-Ei-X4t"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egS-CK-f4q">
+                                <rect key="frame" x="171" y="751" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="privacy:" destination="hkv-eM-YHY" eventType="touchUpInside" id="Aw7-0P-6t8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4G8-Ug-4pJ" firstAttribute="centerX" secondItem="p6U-T3-D9W" secondAttribute="centerX" id="0im-L2-BHw"/>
+                            <constraint firstItem="4G8-Ug-4pJ" firstAttribute="leading" secondItem="TCY-Zn-SwQ" secondAttribute="leading" id="ENt-3L-5pm"/>
+                            <constraint firstItem="4G8-Ug-4pJ" firstAttribute="top" secondItem="TCY-Zn-SwQ" secondAttribute="top" id="VCK-Pl-DJV"/>
+                            <constraint firstItem="egS-CK-f4q" firstAttribute="leading" secondItem="TCY-Zn-SwQ" secondAttribute="leading" constant="171" id="rK9-XW-oKn"/>
+                            <constraint firstItem="egS-CK-f4q" firstAttribute="top" secondItem="4G8-Ug-4pJ" secondAttribute="bottom" constant="8" id="srD-vs-FwQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TCY-Zn-SwQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FBl-4C-lYa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fF-dV-bCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.956521739130437" y="846.42857142857144"/>
         </scene>
         <!--Loginpage-->
         <scene sceneID="dov-i9-BfS">
@@ -907,6 +1057,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Checkbox" width="120" height="120"/>
+        <image name="UnCheckbox" width="120" height="120"/>
         <image name="arrowtriangle.down.circle" catalog="system" width="64" height="60"/>
         <image name="briefcase" catalog="system" width="64" height="50"/>
         <image name="email" width="50" height="50"/>

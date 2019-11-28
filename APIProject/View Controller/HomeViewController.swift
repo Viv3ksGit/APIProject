@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -20,6 +21,21 @@ class HomeViewController: UIViewController {
     @IBAction func settingsButton(_ sender: Any) {
         performSegue(withIdentifier: "HometoSettings", sender: nil)
     }
+    
+    @IBAction func logout(_ sender: UIButton) {
+             do {
+                        try Auth.auth().signOut()
+                    }
+                 catch let signOutError as NSError {
+                        print ("Error signing out: %@", signOutError)
+                    }
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initial = storyboard.instantiateInitialViewController()
+                    UIApplication.shared.keyWindow?.rootViewController = initial
+             }
+            
+        
     
     
     @IBAction func profilebutton(_ sender: Any) {

@@ -17,6 +17,7 @@
 		175E7C8423877778004A89FC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E7C8323877778004A89FC /* NewsViewController.swift */; };
 		17B735132388F3BD0047ABE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B735122388F3BD0047ABE6 /* LoginViewController.swift */; };
 		17B735152388F3D80047ABE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B735142388F3D80047ABE6 /* SignUpViewController.swift */; };
+		17D8424D238F754C00818693 /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8424C238F754C00818693 /* Privacy.swift */; };
 		5D01080B238DC530003DF0AD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D01080A238DC530003DF0AD /* Article.swift */; };
 		6EDF07CE2387554800EBB686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF07CD2387554800EBB686 /* AppDelegate.swift */; };
 		6EDF07D02387554800EBB686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF07CF2387554800EBB686 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		175E7C8323877778004A89FC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		17B735122388F3BD0047ABE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17B735142388F3D80047ABE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		17D8424C238F754C00818693 /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		493E959E39151D00C97B05BF /* Pods-APIProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIProject.debug.xcconfig"; path = "Target Support Files/Pods-APIProject/Pods-APIProject.debug.xcconfig"; sourceTree = "<group>"; };
 		49F2D4DFABA49DF851268FCC /* Pods_APIProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3C47931F26782F83B57A4E /* Pods-APIProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIProject.release.xcconfig"; path = "Target Support Files/Pods-APIProject/Pods-APIProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				17B735142388F3D80047ABE6 /* SignUpViewController.swift */,
 				173822302389FF5700A89806 /* WeatherViewController.swift */,
 				7752C183238EACE10091AC50 /* SettingsViewController.swift */,
+				17D8424C238F754C00818693 /* Privacy.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				175E7C8023877415004A89FC /* ProfileViewController.swift in Sources */,
 				7752C184238EACE20091AC50 /* SettingsViewController.swift in Sources */,
 				17382236238A014E00A89806 /* WeatherData.swift in Sources */,
+				17D8424D238F754C00818693 /* Privacy.swift in Sources */,
 				175E7C7E2387637A004A89FC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
