@@ -15,6 +15,7 @@
 		175E7C7E2387637A004A89FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E7C7D2387637A004A89FC /* HomeViewController.swift */; };
 		175E7C8023877415004A89FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E7C7F23877415004A89FC /* ProfileViewController.swift */; };
 		175E7C8423877778004A89FC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E7C8323877778004A89FC /* NewsViewController.swift */; };
+		1775783F23903C6300126568 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775783E23903C6300126568 /* ForgotPassword.swift */; };
 		17B735132388F3BD0047ABE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B735122388F3BD0047ABE6 /* LoginViewController.swift */; };
 		17B735152388F3D80047ABE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B735142388F3D80047ABE6 /* SignUpViewController.swift */; };
 		17D8424D238F754C00818693 /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8424C238F754C00818693 /* Privacy.swift */; };
@@ -37,6 +38,7 @@
 		175E7C7D2387637A004A89FC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		175E7C7F23877415004A89FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		175E7C8323877778004A89FC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		1775783E23903C6300126568 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		17B735122388F3BD0047ABE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17B735142388F3D80047ABE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17D8424C238F754C00818693 /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				173822302389FF5700A89806 /* WeatherViewController.swift */,
 				7752C183238EACE10091AC50 /* SettingsViewController.swift */,
 				17D8424C238F754C00818693 /* Privacy.swift */,
+				1775783E23903C6300126568 /* ForgotPassword.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				17382236238A014E00A89806 /* WeatherData.swift in Sources */,
 				17D8424D238F754C00818693 /* Privacy.swift in Sources */,
 				175E7C7E2387637A004A89FC /* HomeViewController.swift in Sources */,
+				1775783F23903C6300126568 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
